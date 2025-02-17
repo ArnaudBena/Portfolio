@@ -470,9 +470,6 @@ section {
   }
 }
 
-
-@media screen and (min-width: 750px) {}
-
 .card {
   background: #14141d;
   text-transform: uppercase;
@@ -716,4 +713,10 @@ footer {
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+
+@media screen and (max-width: 878px) {
+  .card__title {
+    font-size: 1rem;
+  }
 }
