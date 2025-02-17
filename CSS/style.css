@@ -709,3 +709,11 @@ footer {
     padding: 3rem;
   }
 }
+
+.thanks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
