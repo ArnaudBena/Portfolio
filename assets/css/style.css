@@ -127,3 +127,142 @@ p {
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.25);
 }
+
+/* ============================================
+   GLASSMORPHISM — Cards
+   ============================================ */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+.glass-card:hover {
+    border-color: rgba(0, 212, 255, 0.3);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.08);
+    transform: scale(1.02);
+}
+
+/* ============================================
+   ORBES DE FOND
+   ============================================ */
+.orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.orb--cyan {
+    width: 600px;
+    height: 600px;
+    background: var(--orb-cyan);
+    top: -10%;
+    right: -5%;
+}
+
+.orb--purple {
+    width: 500px;
+    height: 500px;
+    background: var(--orb-purple);
+    top: 40%;
+    left: -10%;
+}
+
+.orb--green {
+    width: 400px;
+    height: 400px;
+    background: var(--orb-green);
+    bottom: -5%;
+    left: 35%;
+}
+
+/* ============================================
+   KEYFRAMES — Animations
+   ============================================ */
+
+/* Fade-in + translateY (reveal au scroll) */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slide-in depuis la gauche (Hero texte) */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.8s ease forwards;
+}
+
+/* Slide-in depuis la droite (Hero image) */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-right {
+    animation: slideInRight 0.8s ease 0.2s forwards;
+    opacity: 0;
+}
+
+/* Badge "En recherche" — bordure accent pulsante */
+@keyframes pulseAccent {
+    0%, 100% {
+        border-color: var(--accent);
+        box-shadow: 0 0 10px rgba(0, 212, 255, 0.15);
+    }
+    50% {
+        border-color: rgba(0, 212, 255, 0.5);
+        box-shadow: 0 0 25px rgba(0, 212, 255, 0.25);
+    }
+}
+
+.pulse-accent {
+    animation: pulseAccent 2.5s ease-in-out infinite;
+}
+
+/* Cursor spotlight — halo cyan */
+.cursor-spotlight {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.06) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s;
+}
+
+/* Header scrolled */
+.header-scrolled {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(10, 10, 18, 0.8);
+    border-bottom: 1px solid var(--glass-border);
+}
