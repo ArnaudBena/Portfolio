@@ -390,8 +390,108 @@
         </section>
 
         <!-- ========== PARCOURS ========== -->
-        <section id="parcours">
-            <!-- (commit #9 — section Parcours) -->
+        <section id="parcours" class="relative z-10 py-24 lg:py-32">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <!-- En-tête + bouton CV -->
+                <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-16 reveal">
+                    <div>
+                        <span class="label mb-4 block">Parcours</span>
+                        <h2>Mon évolution professionnelle.</h2>
+                    </div>
+                    <a href="./assets/docs/cv-arnaud-benacquista.pdf" download
+                        class="mt-6 sm:mt-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--accent)] text-[var(--accent)] text-sm hover:bg-[var(--accent-soft)] transition-all">
+                        <i class="fa-solid fa-download text-xs"></i>
+                        Télécharger CV
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+
+                    <!-- Colonne gauche — EXPÉRIENCES -->
+                    <div class="reveal">
+                        <h3 class="text-lg mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-briefcase text-[var(--accent)] text-sm"></i>
+                            Expériences
+                        </h3>
+                        <div class="flex flex-col gap-6">
+
+                            <!-- Card "En recherche" — alternance -->
+                            <div class="glass-card p-6 border-[var(--accent)] pulse-accent">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span
+                                        class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-[var(--accent-soft)] text-[var(--accent)] border border-[var(--accent)]">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
+                                        En recherche
+                                    </span>
+                                </div>
+                                <p class="text-xs text-[var(--text-secondary)] mb-1">Septembre 2026 — Aujourd'hui</p>
+                                <h3 class="text-base mb-1">Alternance — Poste à définir</h3>
+                                <p class="text-sm">Recherche active d'une alternance dans le cadre du Master Développement et Ingénierie Informatique à Metz Numeric School.</p>
+                            </div>
+
+                            <!-- Card "En recherche" — stage -->
+                            <div class="glass-card p-6 border-[var(--accent)] pulse-accent">
+                                <div class="flex items-center gap-2 mb-3">
+                                    <span
+                                        class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-[var(--accent-soft)] text-[var(--accent)] border border-[var(--accent)]">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-[var(--accent)] animate-pulse"></span>
+                                        En recherche
+                                    </span>
+                                </div>
+                                <p class="text-xs text-[var(--text-secondary)] mb-1">Juin 2025 — Août 2025</p>
+                                <h3 class="text-base mb-1">Stage — Développeur (2 mois)</h3>
+                                <p class="text-sm">Recherche active d'un stage de 2 mois pour valider la formation Concepteur Développeur d'Applications.</p>
+                            </div>
+
+                            <!-- EcoWater -->
+                            <div class="glass-card p-6">
+                                <p class="text-xs text-[var(--text-secondary)] mb-1">Décembre 2020 — Décembre 2024</p>
+                                <h3 class="text-base mb-1">Chef de secteur</h3>
+                                <p class="text-sm text-[var(--accent)] mb-2">EcoWater Systems France — Grand Est</p>
+                                <p class="text-sm">Développement commercial en région Grand Est : gestion de portefeuille clients, formation des équipes commerciales, négociation de contrats et fidélisation partenaires.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Colonne droite — FORMATIONS -->
+                    <div class="reveal">
+                        <h3 class="text-lg mb-6 flex items-center gap-2">
+                            <i class="fa-solid fa-graduation-cap text-[var(--accent)] text-sm"></i>
+                            Formations
+                        </h3>
+                        <div class="flex flex-col gap-6">
+
+                            <!-- Master -->
+                            <div class="glass-card p-6">
+                                <p class="text-xs text-[var(--text-secondary)] mb-1">2025 — 2027</p>
+                                <h3 class="text-base mb-1">Master Développement Ingénierie Informatique</h3>
+                                <p class="text-sm text-[var(--accent)] mb-2">Metz Numeric School — Alternance</p>
+                                <p class="text-sm">Architecture Microservices, Cloud, DevOps, conception logicielle avancée.</p>
+                            </div>
+
+                            <!-- Bac+3 CDA -->
+                            <div class="glass-card p-6">
+                                <p class="text-xs text-[var(--text-secondary)] mb-1">2024 — 2026</p>
+                                <h3 class="text-base mb-1">Bac+3 Concepteur Développeur d'Applications</h3>
+                                <p class="text-sm text-[var(--accent)] mb-2">Metz Numeric School</p>
+                                <p class="text-sm">Développement logiciel, bases de données, méthodologies agiles, Java, Spring Boot.</p>
+                            </div>
+
+                            <!-- Licence GREEN -->
+                            <div class="glass-card p-6">
+                                <p class="text-xs text-[var(--text-secondary)] mb-1">2015</p>
+                                <h3 class="text-base mb-1">Licence GREEN</h3>
+                                <p class="text-sm text-[var(--accent)] mb-2">Diplôme obtenu</p>
+                                <p class="text-sm">Gestion de projet, analyse environnementale, réglementation énergétique.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </section>
 
         <!-- ========== PROJETS ========== -->
