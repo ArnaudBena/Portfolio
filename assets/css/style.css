@@ -333,3 +333,20 @@ p {
     position: absolute;
     visibility: hidden;
 }
+
+/* ============================================
+   MODALS PROJETS
+   ============================================ */
+.project-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.project-modal.active .project-modal-content {
+    transform: scale(1);
+}
+
+/* Empêcher le scroll du body quand modal ouverte */
+body.modal-open {
+    overflow: hidden;
+}
