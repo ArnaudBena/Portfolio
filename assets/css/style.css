@@ -350,3 +350,48 @@ p {
 body.modal-open {
     overflow: hidden;
 }
+
+/* ============================================
+   RESPONSIVE — 375px et 768px
+   ============================================ */
+
+/* Mobile ≤ 375px */
+@media (max-width: 375px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .glass-card {
+        border-radius: 12px;
+    }
+
+    .project-modal-content {
+        padding: 1.25rem !important;
+    }
+}
+
+/* Tablette ≤ 768px */
+@media (max-width: 768px) {
+    .orb {
+        opacity: 0.6;
+    }
+
+    .orb--cyan {
+        width: 350px;
+        height: 350px;
+    }
+
+    .orb--purple {
+        width: 300px;
+        height: 300px;
+    }
+
+    .orb--green {
+        width: 250px;
+        height: 250px;
+    }
+}
