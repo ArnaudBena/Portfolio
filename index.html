@@ -63,16 +63,13 @@
             <div class="flex items-center justify-between h-16 lg:h-20">
 
                 <!-- Logo -->
-                <a href="#accueil" class="flex items-center gap-2 relative z-10">
-                    <img src="./favicons/favicon32x32.png" alt="Logo Arnaud BENACQUISTA" width="32" height="32">
+                <a href="#accueil" class="flex items-center relative z-10">
                     <span class="font-['Syne'] font-bold text-sm sm:text-base text-[var(--text-primary)]">Arnaud
                         BENACQUISTA</span>
                 </a>
 
                 <!-- Navigation desktop -->
                 <nav class="hidden lg:flex items-center gap-8" aria-label="Navigation principale">
-                    <a href="#accueil"
-                        class="text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Accueil</a>
                     <a href="#a-propos"
                         class="text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">À
                         propos</a>
@@ -123,8 +120,11 @@
             class="fixed top-0 right-0 h-full w-72 translate-x-full transition-transform duration-300 ease-in-out z-40 flex flex-col pt-24 px-8 gap-6 lg:hidden"
             style="background: rgba(15, 15, 26, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-left: 1px solid var(--glass-border);">
 
-            <a href="#accueil"
-                class="mobile-link text-lg text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Accueil</a>
+            <!-- Bouton fermer (croix) -->
+            <button id="mobileCloseBtn" class="absolute top-5 right-5 w-10 h-10 flex items-center justify-center text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors" aria-label="Fermer le menu">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+
             <a href="#a-propos"
                 class="mobile-link text-lg text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">À
                 propos</a>
@@ -309,15 +309,15 @@
                         <div class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-4 xl:grid-cols-5 gap-6">
 
                             <div class="flex flex-col items-center gap-2 group">
-                                <div class="glass-card p-4 flex items-center justify-center w-16 h-16">
+                                <div class="glass-card p-4 flex items-center justify-center w-16 h-16 lg:w-36 lg:h-36">
                                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
-                                        width="48" height="48" alt="HTML5">
+                                        width="60" height="60" alt="HTML5">
                                 </div>
                                 <span class="text-xs text-[var(--text-secondary)] group-hover:text-[var(--accent)] transition-colors">HTML5</span>
                             </div>
 
                             <div class="flex flex-col items-center gap-2 group">
-                                <div class="glass-card p-4 flex items-center justify-center w-16 h-16">
+                                <div class="glass-card p-4 flex items-center justify-center w-16 h-16 lg:w-24 lg:h-24">
                                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
                                         width="48" height="48" alt="CSS3">
                                 </div>
@@ -325,7 +325,7 @@
                             </div>
 
                             <div class="flex flex-col items-center gap-2 group">
-                                <div class="glass-card p-4 flex items-center justify-center w-16 h-16">
+                                <div class="glass-card p-4 flex items-center justify-center w-16 h-16 lg:w-24 lg:h-24">
                                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
                                         width="48" height="48" alt="JavaScript">
                                 </div>
@@ -333,7 +333,7 @@
                             </div>
 
                             <div class="flex flex-col items-center gap-2 group">
-                                <div class="glass-card p-4 flex items-center justify-center w-16 h-16">
+                                <div class="glass-card p-4 flex items-center justify-center w-16 h-16 lg:w-24 lg:h-24">
                                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
                                         width="48" height="48" alt="TypeScript">
                                 </div>
@@ -341,7 +341,7 @@
                             </div>
 
                             <div class="flex flex-col items-center gap-2 group">
-                                <div class="glass-card p-4 flex items-center justify-center w-16 h-16">
+                                <div class="glass-card p-4 flex items-center justify-center w-16 h-16 lg:w-24 lg:h-24">
                                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
                                         width="48" height="48" alt="Java">
                                 </div>
@@ -349,7 +349,7 @@
                             </div>
 
                             <div class="flex flex-col items-center gap-2 group">
-                                <div class="glass-card p-4 flex items-center justify-center w-16 h-16">
+                                <div class="glass-card p-4 flex items-center justify-center w-16 h-16 lg:w-24 lg:h-24">
                                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
                                         width="48" height="48" alt="Spring Boot">
                                 </div>
@@ -357,7 +357,7 @@
                             </div>
 
                             <div class="flex flex-col items-center gap-2 group">
-                                <div class="glass-card p-4 flex items-center justify-center w-16 h-16">
+                                <div class="glass-card p-4 flex items-center justify-center w-16 h-16 lg:w-24 lg:h-24">
                                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg"
                                         width="48" height="48" alt="Angular">
                                 </div>
@@ -365,7 +365,7 @@
                             </div>
 
                             <div class="flex flex-col items-center gap-2 group">
-                                <div class="glass-card p-4 flex items-center justify-center w-16 h-16">
+                                <div class="glass-card p-4 flex items-center justify-center w-16 h-16 lg:w-24 lg:h-24">
                                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
                                         width="48" height="48" alt="Python">
                                 </div>
@@ -373,7 +373,7 @@
                             </div>
 
                             <div class="flex flex-col items-center gap-2 group">
-                                <div class="glass-card p-4 flex items-center justify-center w-16 h-16">
+                                <div class="glass-card p-4 flex items-center justify-center w-16 h-16 lg:w-24 lg:h-24">
                                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
                                         width="48" height="48" alt="SQL">
                                 </div>
@@ -381,7 +381,7 @@
                             </div>
 
                             <div class="flex flex-col items-center gap-2 group">
-                                <div class="glass-card p-4 flex items-center justify-center w-16 h-16">
+                                <div class="glass-card p-4 flex items-center justify-center w-16 h-16 lg:w-24 lg:h-24">
                                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
                                         width="48" height="48" alt="Git">
                                 </div>
@@ -471,7 +471,7 @@
 
                             <!-- Master -->
                             <div class="glass-card p-6">
-                                <p class="text-xs text-[var(--text-secondary)] mb-1">2025 — 2027</p>
+                                <p class="text-xs text-[var(--text-secondary)] mb-1">2026 — 2028</p>
                                 <h3 class="text-base mb-1">Master Développement Ingénierie Informatique</h3>
                                 <p class="text-sm text-[var(--accent)] mb-2">Metz Numeric School — Alternance</p>
                                 <p class="text-sm">Architecture Microservices, Cloud, DevOps, conception logicielle avancée.</p>
@@ -533,7 +533,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8" id="projectGrid">
 
                     <!-- Projet 1 — Club Canin -->
-                    <div class="project-card glass-card overflow-hidden reveal" data-category="app">
+                    <div class="project-card glass-card overflow-hidden reveal cursor-pointer" data-category="app" data-project="club-canin" role="button" tabindex="0" aria-label="Voir les détails du projet Club Canin">
                         <!-- Image placeholder -->
                         <div class="relative h-48 bg-[var(--bg-surface)] flex items-center justify-center overflow-hidden">
                             <div class="text-center">
@@ -553,7 +553,7 @@
                             </div>
                             <h3 class="text-lg mb-2">Club Canin</h3>
                             <p class="text-sm mb-4">Application web de gestion d'un club canin : membres, chiens, cours par tranche d'âge, réservations et planning des coachs.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
+                            <div class="flex flex-wrap gap-2">
                                 <span class="px-2 py-1 rounded text-xs bg-[var(--glass-bg)] border border-[var(--glass-border)] text-[var(--text-secondary)]">Java</span>
                                 <span class="px-2 py-1 rounded text-xs bg-[var(--glass-bg)] border border-[var(--glass-border)] text-[var(--text-secondary)]">Spring Boot</span>
                                 <span class="px-2 py-1 rounded text-xs bg-[var(--glass-bg)] border border-[var(--glass-border)] text-[var(--text-secondary)]">SQL</span>
@@ -561,14 +561,11 @@
                                 <span class="px-2 py-1 rounded text-xs bg-[var(--glass-bg)] border border-[var(--glass-border)] text-[var(--text-secondary)]">CSS</span>
                                 <span class="px-2 py-1 rounded text-xs bg-[var(--glass-bg)] border border-[var(--glass-border)] text-[var(--text-secondary)]">JavaScript</span>
                             </div>
-                            <button class="project-modal-btn text-sm text-[var(--accent)] hover:underline" data-project="club-canin">
-                                Voir les détails <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
-                            </button>
                         </div>
                     </div>
 
                     <!-- Projet 2 — Site vitrine mariage -->
-                    <div class="project-card glass-card overflow-hidden reveal" data-category="web">
+                    <div class="project-card glass-card overflow-hidden reveal cursor-pointer" data-category="web" data-project="mariage" role="button" tabindex="0" aria-label="Voir les détails du projet Site vitrine mariage">
                         <!-- Image placeholder -->
                         <div class="relative h-48 bg-[var(--bg-surface)] flex items-center justify-center overflow-hidden">
                             <div class="text-center">
@@ -588,24 +585,25 @@
                             </div>
                             <h3 class="text-lg mb-2">Site vitrine mariage</h3>
                             <p class="text-sm mb-4">Création d'un site vitrine élégant pour un événement de mariage. Présentation du lieu, du programme et des informations pratiques pour les invités.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
+                            <div class="flex flex-wrap gap-2">
                                 <span class="px-2 py-1 rounded text-xs bg-[var(--glass-bg)] border border-[var(--glass-border)] text-[var(--text-secondary)]">HTML</span>
                                 <span class="px-2 py-1 rounded text-xs bg-[var(--glass-bg)] border border-[var(--glass-border)] text-[var(--text-secondary)]">CSS</span>
                             </div>
-                            <button class="project-modal-btn text-sm text-[var(--accent)] hover:underline" data-project="mariage">
-                                Voir les détails <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
-                            </button>
                         </div>
                     </div>
 
                     <!-- Projet 3 — Site psychologue du travail -->
-                    <div class="project-card glass-card overflow-hidden reveal" data-category="web">
+                    <div class="project-card glass-card overflow-hidden reveal cursor-pointer" data-category="web" data-project="psychologue" role="button" tabindex="0" aria-label="Voir les détails du projet Site psychologue du travail">
                         <!-- Image placeholder -->
                         <div class="relative h-48 bg-[var(--bg-surface)] flex items-center justify-center overflow-hidden">
                             <div class="text-center">
                                 <i class="fa-solid fa-brain text-4xl text-[var(--accent)] opacity-30 mb-2"></i>
                                 <p class="text-xs text-[var(--text-secondary)]">Aperçu à venir</p>
                             </div>
+                            <!-- Badge statut -->
+                            <span class="absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-medium bg-green-500/15 text-green-400 border border-green-500/30">
+                                Terminé
+                            </span>
                         </div>
                         <!-- Contenu -->
                         <div class="p-6">
@@ -615,14 +613,11 @@
                             </div>
                             <h3 class="text-lg mb-2">Site psychologue du travail</h3>
                             <p class="text-sm mb-4">Site vitrine professionnel pour une psychologue du travail. Présentation des services, prise de contact, interface claire et rassurante.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
+                            <div class="flex flex-wrap gap-2">
                                 <span class="px-2 py-1 rounded text-xs bg-[var(--glass-bg)] border border-[var(--glass-border)] text-[var(--text-secondary)]">HTML</span>
                                 <span class="px-2 py-1 rounded text-xs bg-[var(--glass-bg)] border border-[var(--glass-border)] text-[var(--text-secondary)]">CSS</span>
                                 <span class="px-2 py-1 rounded text-xs bg-[var(--glass-bg)] border border-[var(--glass-border)] text-[var(--text-secondary)]">JavaScript</span>
                             </div>
-                            <button class="project-modal-btn text-sm text-[var(--accent)] hover:underline" data-project="psychologue">
-                                Voir les détails <i class="fa-solid fa-arrow-right text-xs ml-1"></i>
-                            </button>
                         </div>
                     </div>
 

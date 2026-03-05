@@ -19,6 +19,8 @@ function menuMobile() {
     const mobileOverlay = document.getElementById('mobileOverlay');
     const mobileLinks = document.querySelectorAll('#mobileMenu .mobile-link');
 
+    const mobileCloseBtn = document.getElementById('mobileCloseBtn');
+
     if (!burgerBtn || !mobileMenu) return;
 
     function openMenu() {
@@ -46,6 +48,11 @@ function menuMobile() {
     mobileLinks.forEach(link => {
         link.addEventListener('click', closeMenu);
     });
+
+    // Fermeture au clic sur le bouton X
+    if (mobileCloseBtn) {
+        mobileCloseBtn.addEventListener('click', closeMenu);
+    }
 
     // Fermeture au clic sur l'overlay
     if (mobileOverlay) {
@@ -97,10 +104,10 @@ function tabsFilters() {
 
 /* ---------- 4. Modals projets ---------- */
 function showModals() {
-    const modalBtns = document.querySelectorAll('.project-modal-btn');
+    const clickableCards = document.querySelectorAll('.project-card[data-project]');
     const modals = document.querySelectorAll('.project-modal');
 
-    if (!modalBtns.length) return;
+    if (!clickableCards.length) return;
 
     function openModal(projectId) {
         const modal = document.getElementById('modal-' + projectId);
@@ -114,11 +121,19 @@ function showModals() {
         document.body.classList.remove('modal-open');
     }
 
-    // Ouverture au clic sur "Voir les détails"
-    modalBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            const projectId = btn.getAttribute('data-project');
+    // Ouverture au clic sur la card
+    clickableCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const projectId = card.getAttribute('data-project');
             openModal(projectId);
+        });
+        // Ouverture au clavier (Enter / Space)
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                const projectId = card.getAttribute('data-project');
+                openModal(projectId);
+            }
         });
     });
 
