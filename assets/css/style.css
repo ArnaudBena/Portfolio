@@ -300,3 +300,36 @@ p {
 .hero-avatar-glow {
     box-shadow: 0 0 40px rgba(0, 212, 255, 0.15), 0 0 80px rgba(0, 212, 255, 0.05);
 }
+
+/* ============================================
+   PROJETS — Filtres
+   ============================================ */
+.filter-btn {
+    color: var(--text-secondary);
+    background: transparent;
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.filter-btn.active {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--accent-soft);
+}
+
+/* Card projet masquée par filtre */
+.project-card {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.project-card.hidden-filter {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+    position: absolute;
+    visibility: hidden;
+}
