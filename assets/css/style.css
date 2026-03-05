@@ -264,5 +264,30 @@ p {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     background: rgba(10, 10, 18, 0.8);
-    border-bottom: 1px solid var(--glass-border);
+    border-bottom-color: var(--glass-border) !important;
+}
+
+/* ============================================
+   BURGER MOBILE
+   ============================================ */
+.burger-open .burger-line:nth-child(1) {
+    transform: rotate(45deg) translate(4px, 4px);
+}
+
+.burger-open .burger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.burger-open .burger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(4px, -4px);
+}
+
+/* Menu mobile ouvert */
+.mobile-menu-open {
+    transform: translateX(0) !important;
+}
+
+.mobile-overlay-visible {
+    opacity: 1 !important;
+    pointer-events: auto !important;
 }
