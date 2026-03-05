@@ -173,8 +173,9 @@ function cursorSpotlight() {
     const spotlight = document.getElementById('cursorSpotlight');
     if (!spotlight) return;
 
-    // Ne pas activer sur les appareils tactiles
+    // Ne pas activer sur les appareils tactiles ou si mouvement réduit
     if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     spotlight.classList.remove('hidden');
 

@@ -42,13 +42,19 @@
 
 <body class="bg-[#0a0a12] text-[#F0F4FF] font-['DM_Sans'] overflow-x-hidden">
 
+    <!-- Skip to content (accessibilité clavier) -->
+    <a href="#accueil"
+        class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[var(--accent)] focus:text-[var(--bg-base)] focus:text-sm focus:font-medium">
+        Aller au contenu principal
+    </a>
+
     <!-- ========== ORBES DE FOND ========== -->
-    <div class="orb orb--cyan"></div>
-    <div class="orb orb--purple"></div>
-    <div class="orb orb--green"></div>
+    <div class="orb orb--cyan" aria-hidden="true"></div>
+    <div class="orb orb--purple" aria-hidden="true"></div>
+    <div class="orb orb--green" aria-hidden="true"></div>
 
     <!-- ========== CURSOR SPOTLIGHT (desktop) ========== -->
-    <div class="cursor-spotlight hidden" id="cursorSpotlight"></div>
+    <div class="cursor-spotlight hidden" id="cursorSpotlight" aria-hidden="true"></div>
 
     <!-- ========== HEADER / NAVIGATION ========== -->
     <header id="header"
@@ -113,7 +119,7 @@
         </div>
 
         <!-- Menu mobile (slide depuis la droite) -->
-        <div id="mobileMenu"
+        <nav id="mobileMenu" role="navigation" aria-label="Menu mobile"
             class="fixed top-0 right-0 h-full w-72 translate-x-full transition-transform duration-300 ease-in-out z-40 flex flex-col pt-24 px-8 gap-6 lg:hidden"
             style="background: rgba(15, 15, 26, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-left: 1px solid var(--glass-border);">
 
@@ -150,7 +156,7 @@
                     <i class="fa-brands fa-linkedin-in text-xl"></i>
                 </a>
             </div>
-        </div>
+        </nav>
 
         <!-- Overlay mobile -->
         <div id="mobileOverlay" class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-30 lg:hidden"></div>
