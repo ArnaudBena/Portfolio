@@ -1,0 +1,39 @@
+
+# Système
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Éditeurs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# Logs
+*.log
+npm-debug.log*
+
+# Guide de dev
+claude.md
+
+# Dépendances (au cas où)
+node_modules/
+
+# Environnement
+.env
+.env.local
+.env.*.local
+
+# Build (au cas où)
+dist/
+build/
+
+# OS
+*~
+*.swp
+*.swo
