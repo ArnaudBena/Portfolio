@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     stickyHeader();
     tabsFilters();
     showModals();
+    sectionsReveal();
+    cursorSpotlight();
 });
 
 /* ---------- 1. Menu mobile (burger) ---------- */
@@ -143,5 +145,49 @@ function showModals() {
                 }
             });
         }
+    });
+}
+
+/* ---------- 5. Reveal sections au scroll ---------- */
+function sectionsReveal() {
+    const reveals = document.querySelectorAll('.reveal');
+    if (!reveals.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    reveals.forEach(el => observer.observe(el));
+}
+
+/* ---------- 6. Cursor spotlight (desktop) ---------- */
+function cursorSpotlight() {
+    const spotlight = document.getElementById('cursorSpotlight');
+    if (!spotlight) return;
+
+    // Ne pas activer sur les appareils tactiles
+    if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
+
+    spotlight.classList.remove('hidden');
+
+    document.addEventListener('mousemove', (e) => {
+        spotlight.style.left = e.clientX + 'px';
+        spotlight.style.top = e.clientY + 'px';
+    });
+
+    document.addEventListener('mouseleave', () => {
+        spotlight.style.opacity = '0';
+    });
+
+    document.addEventListener('mouseenter', () => {
+        spotlight.style.opacity = '1';
     });
 }
