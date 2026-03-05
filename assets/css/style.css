@@ -291,3 +291,12 @@ p {
     opacity: 1 !important;
     pointer-events: auto !important;
 }
+
+/* ============================================
+   HERO
+   ============================================ */
+
+/* Glow autour de l'avatar */
+.hero-avatar-glow {
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.15), 0 0 80px rgba(0, 212, 255, 0.05);
+}
