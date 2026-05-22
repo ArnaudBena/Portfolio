@@ -4,13 +4,97 @@
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
+    initCanvas();
     menuMobile();
     stickyHeader();
     tabsFilters();
     showModals();
     sectionsReveal();
     cursorSpotlight();
+    updateYear();
 });
+
+/* ---------- 0. Canvas particules (fond animé) ---------- */
+function initCanvas() {
+    if (window.innerWidth < 768) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const canvas = document.getElementById('bgCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    const MAX_DIST = 150;
+    let particles = [];
+    let rafId = null;
+
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const target = Math.min(60, Math.floor((canvas.width * canvas.height) / 28000));
+        particles = [];
+        for (let i = 0; i < target; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                vx: (Math.random() - 0.5) * 0.4,
+                vy: (Math.random() - 0.5) * 0.4,
+                r: Math.random() * 1.4 + 0.4,
+            });
+        }
+    }
+    resize();
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(resize, 150);
+    });
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (const p of particles) {
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.x < 0 || p.x > canvas.width)  p.vx *= -1;
+            if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(0, 212, 255, 0.15)';
+            ctx.fill();
+        }
+
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const d  = Math.hypot(dx, dy);
+                if (d < MAX_DIST) {
+                    const alpha = 0.05 * (1 - d / MAX_DIST);
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.strokeStyle = `rgba(0, 212, 255, ${alpha})`;
+                    ctx.lineWidth = 0.6;
+                    ctx.stroke();
+                }
+            }
+        }
+
+        rafId = requestAnimationFrame(draw);
+    }
+    draw();
+
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden && rafId) {
+            cancelAnimationFrame(rafId);
+            rafId = null;
+        } else if (!document.hidden && !rafId) {
+            draw();
+        }
+    });
+}
 
 /* ---------- 1. Menu mobile (burger) ---------- */
 function menuMobile() {
@@ -206,4 +290,10 @@ function cursorSpotlight() {
     document.addEventListener('mouseenter', () => {
         spotlight.style.opacity = '1';
     });
+}
+
+/* ---------- 7. Année dynamique footer ---------- */
+function updateYear() {
+    const el = document.getElementById('current-year');
+    if (el) el.textContent = new Date().getFullYear();
 }

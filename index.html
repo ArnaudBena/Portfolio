@@ -48,6 +48,9 @@
         Aller au contenu principal
     </a>
 
+    <!-- ========== FOND ANIMÉ CANVAS ========== -->
+    <canvas id="bgCanvas" aria-hidden="true"></canvas>
+
     <!-- ========== ORBES DE FOND ========== -->
     <div class="orb orb--cyan" aria-hidden="true"></div>
     <div class="orb orb--purple" aria-hidden="true"></div>
@@ -70,29 +73,22 @@
 
                 <!-- Navigation desktop -->
                 <nav class="hidden lg:flex items-center gap-8" aria-label="Navigation principale">
-                    <a href="#a-propos"
-                        class="text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">À
-                        propos</a>
-                    <a href="#competences"
-                        class="text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Compétences</a>
-                    <a href="#parcours"
-                        class="text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Parcours</a>
-                    <a href="#projets"
-                        class="text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Projets</a>
-                    <a href="#contact"
-                        class="text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Contact</a>
+                    <a href="#a-propos" class="nav-link text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">À propos</a>
+                    <a href="#competences" class="nav-link text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Compétences</a>
+                    <a href="#parcours" class="nav-link text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Parcours</a>
+                    <a href="#projets" class="nav-link text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Projets</a>
+                    <a href="#contact" class="nav-link text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Contact</a>
                 </nav>
 
                 <!-- Actions desktop (CV + réseaux) -->
                 <div class="hidden lg:flex items-center gap-4">
                     <a href="https://github.com/ArnaudBena" target="_blank" rel="noopener noreferrer"
-                        aria-label="GitHub" class="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">
-                        <i class="fa-brands fa-github text-lg"></i>
+                        aria-label="GitHub" class="social-icon-btn">
+                        <i class="fa-brands fa-github"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/arnaud-benacquista-aa07a6159/" target="_blank"
-                        rel="noopener noreferrer" aria-label="LinkedIn"
-                        class="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">
-                        <i class="fa-brands fa-linkedin-in text-lg"></i>
+                        rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon-btn">
+                        <i class="fa-brands fa-linkedin-in"></i>
                     </a>
                     <a href="./assets/docs/cv-arnaud-benacquista.pdf" download
                         class="flex items-center gap-2 px-4 py-2 text-sm rounded-full border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent-soft)] transition-all">
@@ -145,15 +141,14 @@
                 <i class="fa-solid fa-download"></i>
                 Télécharger CV
             </a>
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-3">
                 <a href="https://github.com/ArnaudBena" target="_blank" rel="noopener noreferrer"
-                    aria-label="GitHub" class="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">
-                    <i class="fa-brands fa-github text-xl"></i>
+                    aria-label="GitHub" class="social-icon-btn">
+                    <i class="fa-brands fa-github"></i>
                 </a>
                 <a href="https://www.linkedin.com/in/arnaud-benacquista-aa07a6159/" target="_blank"
-                    rel="noopener noreferrer" aria-label="LinkedIn"
-                    class="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">
-                    <i class="fa-brands fa-linkedin-in text-xl"></i>
+                    rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon-btn">
+                    <i class="fa-brands fa-linkedin-in"></i>
                 </a>
             </div>
         </nav>
@@ -195,6 +190,7 @@
                             </a>
                             <a href="#contact"
                                 class="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[var(--glass-border)] text-[var(--text-primary)] font-medium text-sm hover:border-[var(--accent)] hover:text-[var(--accent)] transition-all">
+                                <i class="fa-regular fa-envelope text-xs"></i>
                                 Me contacter
                             </a>
                         </div>
@@ -725,67 +721,96 @@
 
         <!-- ========== CONTACT ========== -->
         <section id="contact" class="relative z-10 py-24 lg:py-32">
-            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <div class="text-center mb-12 reveal">
-                    <span class="label mb-4 block">Contact</span>
-                    <h2 class="mb-4">Parlons de votre projet.</h2>
-                    <p class="text-base max-w-lg mx-auto">
-                        Disponible pour un stage de 2 mois et une alternance.
-                        N'hésitez pas à me contacter pour toute opportunité ou collaboration.
-                    </p>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+                    <!-- Colonne gauche : intro + infos -->
+                    <div class="reveal">
+                        <span class="label mb-4 block">Contact</span>
+                        <h2 class="mb-6">Parlons de votre projet.</h2>
+                        <p class="text-base mb-10">
+                            Disponible pour un stage de 2 mois et une alternance.
+                            N'hésitez pas à me contacter pour toute opportunité ou collaboration.
+                        </p>
+
+                        <div class="flex flex-col gap-4">
+                            <a href="mailto:arnaud.benacquista@gmail.com"
+                                class="flex items-center gap-4 p-4 glass-card group">
+                                <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-[var(--accent-soft)] text-[var(--accent)] shrink-0">
+                                    <i class="fa-regular fa-envelope"></i>
+                                </span>
+                                <span class="text-sm text-[var(--text-secondary)] group-hover:text-[var(--accent)] transition-colors">arnaud.benacquista@gmail.com</span>
+                            </a>
+                            <div class="flex items-center gap-4 p-4 glass-card">
+                                <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-[var(--accent-soft)] text-[var(--accent)] shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </span>
+                                <span class="text-sm text-[var(--text-secondary)]">Metz, France</span>
+                            </div>
+                            <a href="https://www.linkedin.com/in/arnaud-benacquista-aa07a6159/" target="_blank" rel="noopener"
+                                class="flex items-center gap-4 p-4 glass-card group">
+                                <span class="flex items-center justify-center w-10 h-10 rounded-xl bg-[var(--accent-soft)] text-[var(--accent)] shrink-0">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </span>
+                                <span class="text-sm text-[var(--text-secondary)] group-hover:text-[var(--accent)] transition-colors">linkedin.com/in/arnaud-benacquista</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Colonne droite : formulaire -->
+                    <form action="https://formsubmit.co/2a768d921d50b88f49ce222f2bf7ecb4" method="POST"
+                        class="glass-card p-8 sm:p-10 reveal">
+
+                        <!-- FormSubmit config -->
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="thanks.html">
+                        <input type="hidden" name="_subject" value="Nouveau message — Portfolio Arnaud">
+                        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+                            <!-- Nom -->
+                            <div>
+                                <label for="lastname" class="block text-xs uppercase tracking-widest text-[var(--text-secondary)] mb-2">Nom</label>
+                                <input type="text" id="lastname" name="lastname" required autocomplete="family-name"
+                                    class="w-full px-4 py-3 rounded-xl bg-[var(--bg-surface)] border border-[var(--glass-border)] text-[var(--text-primary)] text-sm placeholder:text-[var(--text-secondary)] focus:outline-none focus:border-[var(--accent)] focus:shadow-[0_0_0_3px_rgba(0,212,255,0.12)] transition-all"
+                                    placeholder="Votre nom">
+                            </div>
+
+                            <!-- Prénom -->
+                            <div>
+                                <label for="firstname" class="block text-xs uppercase tracking-widest text-[var(--text-secondary)] mb-2">Prénom</label>
+                                <input type="text" id="firstname" name="firstname" required autocomplete="given-name"
+                                    class="w-full px-4 py-3 rounded-xl bg-[var(--bg-surface)] border border-[var(--glass-border)] text-[var(--text-primary)] text-sm placeholder:text-[var(--text-secondary)] focus:outline-none focus:border-[var(--accent)] focus:shadow-[0_0_0_3px_rgba(0,212,255,0.12)] transition-all"
+                                    placeholder="Votre prénom">
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="mb-6">
+                            <label for="email" class="block text-xs uppercase tracking-widest text-[var(--text-secondary)] mb-2">Email</label>
+                            <input type="email" id="email" name="email" required autocomplete="email"
+                                class="w-full px-4 py-3 rounded-xl bg-[var(--bg-surface)] border border-[var(--glass-border)] text-[var(--text-primary)] text-sm placeholder:text-[var(--text-secondary)] focus:outline-none focus:border-[var(--accent)] focus:shadow-[0_0_0_3px_rgba(0,212,255,0.12)] transition-all"
+                                placeholder="votre@email.com">
+                        </div>
+
+                        <!-- Message -->
+                        <div class="mb-8">
+                            <label for="message" class="block text-xs uppercase tracking-widest text-[var(--text-secondary)] mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" required
+                                class="w-full px-4 py-3 rounded-xl bg-[var(--bg-surface)] border border-[var(--glass-border)] text-[var(--text-primary)] text-sm placeholder:text-[var(--text-secondary)] focus:outline-none focus:border-[var(--accent)] focus:shadow-[0_0_0_3px_rgba(0,212,255,0.12)] transition-all resize-none"
+                                placeholder="Parlez-moi de votre projet, de votre équipe, ou de l'opportunité..."></textarea>
+                        </div>
+
+                        <!-- Bouton -->
+                        <button type="submit"
+                            class="inline-flex items-center gap-2 px-8 py-3 rounded-full bg-[var(--accent)] text-[var(--bg-base)] font-medium text-sm hover:opacity-90 hover:-translate-y-0.5 transition-all">
+                            <i class="fa-solid fa-paper-plane text-xs"></i>
+                            Envoyer le message
+                        </button>
+                    </form>
+
                 </div>
-
-                <form action="https://formsubmit.co/2a768d921d50b88f49ce222f2bf7ecb4" method="POST"
-                    class="glass-card p-8 sm:p-10 reveal">
-
-                    <!-- FormSubmit config -->
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="thanks.html">
-                    <input type="text" name="_honey" style="display:none">
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-                        <!-- Nom -->
-                        <div>
-                            <label for="lastname" class="block text-sm text-[var(--text-secondary)] mb-2">Nom</label>
-                            <input type="text" id="lastname" name="lastname" required
-                                class="w-full px-4 py-3 rounded-lg bg-[var(--bg-surface)] border border-[var(--glass-border)] text-[var(--text-primary)] text-sm placeholder:text-[var(--text-secondary)] focus:outline-none focus:border-[var(--accent)] transition-colors"
-                                placeholder="Votre nom">
-                        </div>
-
-                        <!-- Prénom -->
-                        <div>
-                            <label for="firstname" class="block text-sm text-[var(--text-secondary)] mb-2">Prénom</label>
-                            <input type="text" id="firstname" name="firstname" required
-                                class="w-full px-4 py-3 rounded-lg bg-[var(--bg-surface)] border border-[var(--glass-border)] text-[var(--text-primary)] text-sm placeholder:text-[var(--text-secondary)] focus:outline-none focus:border-[var(--accent)] transition-colors"
-                                placeholder="Votre prénom">
-                        </div>
-                    </div>
-
-                    <!-- Email -->
-                    <div class="mb-6">
-                        <label for="email" class="block text-sm text-[var(--text-secondary)] mb-2">Email</label>
-                        <input type="email" id="email" name="email" required
-                            class="w-full px-4 py-3 rounded-lg bg-[var(--bg-surface)] border border-[var(--glass-border)] text-[var(--text-primary)] text-sm placeholder:text-[var(--text-secondary)] focus:outline-none focus:border-[var(--accent)] transition-colors"
-                            placeholder="votre@email.com">
-                    </div>
-
-                    <!-- Message -->
-                    <div class="mb-8">
-                        <label for="message" class="block text-sm text-[var(--text-secondary)] mb-2">Message</label>
-                        <textarea id="message" name="message" rows="5" required
-                            class="w-full px-4 py-3 rounded-lg bg-[var(--bg-surface)] border border-[var(--glass-border)] text-[var(--text-primary)] text-sm placeholder:text-[var(--text-secondary)] focus:outline-none focus:border-[var(--accent)] transition-colors resize-none"
-                            placeholder="Votre message..."></textarea>
-                    </div>
-
-                    <!-- Bouton -->
-                    <button type="submit"
-                        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-[var(--accent)] text-[var(--bg-base)] font-medium text-sm hover:opacity-90 transition-opacity">
-                        <i class="fa-solid fa-paper-plane text-xs"></i>
-                        Envoyer le message
-                    </button>
-                </form>
-
             </div>
         </section>
     </main>
@@ -793,17 +818,15 @@
     <!-- ========== FOOTER ========== -->
     <footer class="relative z-10 border-t border-[var(--glass-border)] py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p class="text-sm text-[var(--text-secondary)]">&copy; 2026 Arnaud BENACQUISTA. Tous droits réservés.</p>
-            <div class="flex items-center gap-4">
+            <p class="text-sm text-[var(--text-secondary)]">&copy; <span id="current-year">2026</span> Arnaud BENACQUISTA. Tous droits réservés.</p>
+            <div class="flex items-center gap-3">
                 <a href="https://github.com/ArnaudBena" target="_blank" rel="noopener noreferrer"
-                    aria-label="GitHub"
-                    class="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">
-                    <i class="fa-brands fa-github text-lg"></i>
+                    aria-label="GitHub" class="social-icon-btn">
+                    <i class="fa-brands fa-github"></i>
                 </a>
                 <a href="https://www.linkedin.com/in/arnaud-benacquista-aa07a6159/" target="_blank"
-                    rel="noopener noreferrer" aria-label="LinkedIn"
-                    class="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">
-                    <i class="fa-brands fa-linkedin-in text-lg"></i>
+                    rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon-btn">
+                    <i class="fa-brands fa-linkedin-in"></i>
                 </a>
             </div>
         </div>

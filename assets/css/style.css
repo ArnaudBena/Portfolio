@@ -138,6 +138,60 @@ textarea:focus-visible {
 }
 
 /* ============================================
+   CANVAS — Fond animé particules
+   ============================================ */
+#bgCanvas {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ============================================
+   NAV — Hover underline accent
+   ============================================ */
+.nav-link {
+    position: relative;
+}
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* ============================================
+   NAV & FOOTER — Icônes sociales rondes
+   ============================================ */
+.social-icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.2s;
+    font-size: 0.9rem;
+}
+.social-icon-btn:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: var(--accent-soft);
+    transform: translateY(-2px);
+}
+
+/* ============================================
    GLASSMORPHISM — Cards
    ============================================ */
 .glass-card {
