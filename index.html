@@ -111,51 +111,52 @@
             </div>
         </div>
 
-        <!-- Menu mobile (slide depuis la droite) -->
-        <nav id="mobileMenu" role="navigation" aria-label="Menu mobile"
-            class="fixed top-0 right-0 h-full w-72 translate-x-full transition-transform duration-300 ease-in-out z-40 flex flex-col pt-24 px-8 gap-6 lg:hidden"
-            style="background: rgba(15, 15, 26, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-left: 1px solid var(--glass-border);">
-
-            <!-- Bouton fermer (croix) -->
-            <button id="mobileCloseBtn" class="absolute top-5 right-5 w-10 h-10 flex items-center justify-center text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors" aria-label="Fermer le menu">
-                <i class="fa-solid fa-xmark text-2xl"></i>
-            </button>
-
-            <a href="#a-propos"
-                class="mobile-link text-lg text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">À
-                propos</a>
-            <a href="#competences"
-                class="mobile-link text-lg text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Compétences</a>
-            <a href="#parcours"
-                class="mobile-link text-lg text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Parcours</a>
-            <a href="#projets"
-                class="mobile-link text-lg text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Projets</a>
-            <a href="#contact"
-                class="mobile-link text-lg text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Contact</a>
-
-            <hr class="border-[var(--glass-border)] my-2">
-
-            <!-- CV + réseaux mobile -->
-            <a href="./assets/docs/cv-arnaud-benacquista.pdf" download
-                class="flex items-center gap-2 text-sm text-[var(--accent)]">
-                <i class="fa-solid fa-download"></i>
-                Télécharger CV
-            </a>
-            <div class="flex items-center gap-3">
-                <a href="https://github.com/ArnaudBena" target="_blank" rel="noopener noreferrer"
-                    aria-label="GitHub" class="social-icon-btn">
-                    <i class="fa-brands fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/arnaud-benacquista-aa07a6159/" target="_blank"
-                    rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon-btn">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-            </div>
-        </nav>
-
-        <!-- Overlay mobile -->
-        <div id="mobileOverlay" class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-30 lg:hidden"></div>
     </header>
+
+    <!-- Menu mobile (slide depuis la droite) — hors du header pour éviter le stacking context du backdrop-filter -->
+    <nav id="mobileMenu" role="navigation" aria-label="Menu mobile"
+        class="fixed top-0 right-0 h-full w-72 translate-x-full transition-transform duration-300 ease-in-out z-50 flex flex-col pt-24 px-8 gap-6 lg:hidden"
+        style="background: #0f0f1a; border-left: 1px solid var(--glass-border);">
+
+        <!-- Bouton fermer (croix) -->
+        <button id="mobileCloseBtn" class="absolute top-5 right-5 w-10 h-10 flex items-center justify-center text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors" aria-label="Fermer le menu">
+            <i class="fa-solid fa-xmark text-2xl"></i>
+        </button>
+
+        <a href="#a-propos"
+            class="mobile-link text-lg text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">À
+            propos</a>
+        <a href="#competences"
+            class="mobile-link text-lg text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Compétences</a>
+        <a href="#parcours"
+            class="mobile-link text-lg text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Parcours</a>
+        <a href="#projets"
+            class="mobile-link text-lg text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Projets</a>
+        <a href="#contact"
+            class="mobile-link text-lg text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Contact</a>
+
+        <hr class="border-[var(--glass-border)] my-2">
+
+        <!-- CV + réseaux mobile -->
+        <a href="./assets/docs/cv-arnaud-benacquista.pdf" download
+            class="flex items-center gap-2 text-sm text-[var(--accent)]">
+            <i class="fa-solid fa-download"></i>
+            Télécharger CV
+        </a>
+        <div class="flex items-center gap-3">
+            <a href="https://github.com/ArnaudBena" target="_blank" rel="noopener noreferrer"
+                aria-label="GitHub" class="social-icon-btn">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/arnaud-benacquista-aa07a6159/" target="_blank"
+                rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon-btn">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Overlay mobile -->
+    <div id="mobileOverlay" class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300 z-40 lg:hidden"></div>
 
     <main>
         <!-- ========== HERO ========== -->
